@@ -8,6 +8,11 @@ def start(message, res=False)
 
     bot.send_message(chat_id,
                      text="Привет, {0.first_name}! Я тестовый бот для курса программирования на языке Пайтон").format(
+                            message.from_user)
 
-    )
+@bot.message_handler((content_types=['text']))
+def get_text_messages(message):
+    chat_id = message.chat.id
+    ms_text = message.text
+    bot.send_message(chat_id, text="Я тебя слышу!!! Ваше сообщение:)
 print()
