@@ -14,5 +14,8 @@ def start(message, res=False)
 def get_text_messages(message):
     chat_id = message.chat.id
     ms_text = message.text
-    bot.send_message(chat_id, text="Я тебя слышу!!! Ваше сообщение:)
+    bot.send_message(chat_id, text="Я тебя слышу!!! Ваше сообщение: "+ms_text)
+
+bot.polling(none_stop=True, interval=0)
+
 print()
